@@ -1,0 +1,89 @@
+<h1>jQuery Demo</h1>
+
+<h2>What Can jQuery Do?</h2>
+
+<p id="demo">jQuery can hide HTML elements.</p>
+
+<p id="demo">jQuery can hide HTML elements 2.</p>
+
+<button type="button" id="btnShow1">Skjul tekst</button>
+<button type="button" id="btnHide1">Vis tekst</button>
+
+<br />
+<br />
+
+<p name="demoFunction">jQuery can hide HTML elements By Name.</p>
+
+<p name="demoFunction">jQuery can hide HTML elements  By Name 2.</p>
+
+<p name="demoFunction">jQuery can hide HTML elements  By Name 3.</p>
+
+<!-- <button type="button" onclick="document.getElementsByName('demo')[0].style.display='block'">Vis tekst</button> -->
+<button type="button" id="btnHide2">Skjul tekst</button>
+<button type="button" id="btnShow2">Vis tekst</button>
+
+<br />
+
+<button type="button" class="toggle-btn" data-action="hide">Skjul tekst (metode 2)</button>
+<button type="button" class="toggle-btn" data-action="show">Vis tekst (metode 2)</button>
+
+<br />
+<br />
+
+<div id="TagsInOneBlock">
+    <p name="demoInBlock">jQuery can hide HTML elements By Div Id.</p>
+
+    <p name="demoInBlock">jQuery can hide HTML elements By Div Id 2.</p>
+
+    <p name="demoInBlock">jQuery can hide HTML elements By Div Id 3.</p>
+</div>
+
+<button type="button" id="btnHide3">Skjul tekst</button>
+
+<button type="button" id="btnShow3">Vis tekst</button>
+
+<!-- Med den nye strukturerede måde projektet nu er lavet på, vil koden herunder aldrig blive
+kørt. For at køre koden skal den være i en callback funktion, der køres, når filen her =>
+jQueryDemo.html indlæses på index.html siden. -->
+
+<!-- <script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnShow1").click(function() {
+            $("#demo").hide();
+        });
+
+        $("#btnHide1").click(function() {
+            $("#demo").show();
+        });
+
+        $("#btnShow2").click(function() {
+            ShowHideLines('show');
+        });
+
+        $("#btnHide2").click(function() {
+            ShowHideLines('hide');
+        });
+
+        function ShowHideLines(ShowHideText)
+        {
+            $('[name="demo"]').each(function() {
+                $(this)[ShowHideText]();
+            });
+        }
+
+        $("#btnHide3").click(function() {
+            $("#Mathias").hide();
+        });
+
+        $("#btnShow3").click(function() {
+            $("#Mathias").show();
+        });
+
+        $(".toggle-btn").click(function() {
+            var data_action = $(this).data("action");
+            $('[name="demo"]').each(function() {
+                $(this)[data_action]();
+            }); 
+        });
+    });
+</script> -->

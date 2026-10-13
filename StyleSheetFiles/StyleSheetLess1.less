@@ -1,0 +1,233 @@
+// @BackgroundColor: hsl(0, 0%, 100%);
+@BackgroundColor: #FFFF00;
+@FontSize_Basic: 17px;
+@Margin: 10px;
+@TopMarginValue: 25px;
+
+@primary-color: #008cba;
+@danger-color: #f44336;
+@border-color: #ccc;
+@bg-light-color: #f4f4f4;
+
+body 
+{
+    margin: 0;
+    background-color: @BackgroundColor;
+}
+
+/* Egne StyleSheet regler herunder !!! */
+/* Add an active class to highlight the current page */
+.active 
+{
+    background-color: #04AA6D;
+    color: white;
+}
+
+.active1 
+{
+    background-color: orange;
+    color: green;
+}
+
+.MenuCurrentItemParent {
+    background-color: red;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#BackgroundColorForIdControl
+{
+    background-color: orange;
+    color : white;
+
+    h2 
+    {
+        background-color: orange;
+        color : white;   
+        font-size: 1 * @FontSize_Basic; 
+        font-style: normal;
+    }
+}
+
+h2 
+{
+    /* Svarer til en "ren" <h2> tag */
+    background-color: lightblue;
+    color : white;
+    font-size: 1.9 * @FontSize_Basic; 
+    font-style: italic;
+    
+    /* svarer til <h2 class="test"> */
+    &.test
+    {
+        background-color: gold;
+        color : white;
+    }
+
+    /* svarer til <h2> <div class="test"> </h2>*/
+    .test
+    {
+        background-color: green;
+        color : white;
+    }
+}
+
+.test 
+{
+     /* Svarer til en "ren" .test klasse */
+    background-color: lightgreen;
+    color : red;
+
+    /* Svarer til et h2 tag inde i en .test klasse <div class = "test"><h2> </h2> </div>*/
+    h2 
+    {
+        background-color: red;
+        color : white;
+    }
+
+    /* Erklæringen herunder kan ikke lade sig gøre i praksis rent HTML mæssigt set. 
+       Se også i den genererede *.css fil for en bedre forståelse herfor. Erklæringen her 
+       giver i den tilhørende CSS fil en erklæring som: .testh2 */
+    /* Det "tætteste" man kommer på, at kan lave noget i HTML, der minder om nedenstående regel er :
+       <div class="test h2" . Og en sådan erklæring vil have CSS styling efter den "rene" test klasse, 
+       da h2 som bekendt er et HTML Tag og ikke en klasse. Skal man endelig have sammensætningen
+       <div class="test h2" til at virke, skal man lave en seperat klasse med navnet h2, hvilket
+       nok vil øge forvirringen. Så det bør man absolut ikke gøre !!! */
+    &h2 
+    {
+        background-color: orange;
+        color : blue;
+    }
+}
+
+.h2 
+{
+    background-color: brown;
+    color : silver; 
+}
+
+
+.test2
+{
+    background-color: silver;
+    color : green; 
+
+    .test3
+    {
+        background-color: cyan;
+        color : orange;
+    }
+
+    &.test3
+    {
+        background-color: magenta;
+        color : blue;
+    }
+}
+
+.test3
+{
+    background-color: green;
+    color : silver; 
+
+    .test2
+    {
+        background-color: orange;
+        color : cyan;
+    }
+
+    &.test2
+    {
+        background-color: blue;
+        color : magenta;
+    }
+}
+
+.Hide 
+{
+    visibility: hidden;
+}
+
+.None 
+{
+    height: auto;
+    display: none;
+}
+
+.MyMargin 
+{
+    margin-left: @Margin;
+    margin-right: @Margin;
+}
+
+.DontShowControl
+{
+    display: none;
+}
+
+.ShowControl
+{
+    display: block;
+}
+
+.TopMargin
+{
+    margin-top: @TopMarginValue;
+}
+
+    /* ----------------------------------------------------
+   Styling KUN for javaScriptClassDemo.html (ved brug af nesting)
+   ---------------------------------------------------- */
+#responsive-table-view {
+    /* Styling der specifikt kun gælder for dette indhold */
+    padding: 20px;
+    border: 1px solid @border-color;
+
+    /* Nesting for at målrette tabellen og dens elementer */
+    .table-responsive {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+    
+    th {
+        background-color: @bg-light-color;
+    }
+}
+
+.page-item.active {
+    .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+    }
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#todo-list {
+    margin-top: 5px;
+}
+
+.smallFontsizeInTable {
+    font-size: 12px;   
+
+    td, th {
+        padding-top: 5px;
+        padding-bottom: 5px;    
+    } 
+}

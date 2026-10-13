@@ -1,0 +1,123 @@
+<h2>jQuery Binding Dynamic 1</h2>
+
+<div class="Margin">
+    <button type="button" id="btnAddNewButton1">Tilføj Element</button>
+    <br />
+    <br />
+
+    <div class="EditItem1 None">
+        <input id="txtEditItem1" type="text" value="" />
+        <br />
+    </div>
+
+    <div class="ButtonsAdded1 None">
+        <table id="DataTable" class="table table-bordered table-sm">
+            <thead id="tablehead">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Item </th>
+                <th scope="col">Edit Item </th>
+                <th scope="col">Delete Item </th>
+            </tr>
+            </thead>
+            <tbody id="tablebody">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Parent">
+        <div class="ExplanationText">
+            This Site shows how to deal with data generated dynamically !!! 
+        </div>
+    </div>
+</div>
+
+<script type="text/javaScript">
+// Koden herunder bruges ikke længere. Og det dur heller ikke længere
+// med javaScript kode/jQuery kode lagt ind i et script Tag på en html side.
+$(document).ready(function () {
+    var ButtonAddedCounter = 0;
+    
+    var ButtonAddedClass = $(".ButtonsAdded1");
+
+    var CurrentEditItem;
+    var CurrentDeleteItem;
+
+    $("#btnAddNewButton1").on('click', function () {
+        debugger;
+        ButtonAddedCounter++;
+
+        var WorkStringCell0 = "<td>" + ButtonAddedCounter + "</td>";
+
+        var WorkString1 = "<input id='btnDynamic" + ButtonAddedCounter + "' ";
+        WorkString1 += "value='btnDynamic_" + ButtonAddedCounter + "' ";
+        WorkString1 += "type='button'";
+        WorkString1 += " />";
+        var WorkStringCell1 = "<td>" + WorkString1 + "</td>";
+
+        var WorkString2 = "<input id='btnEditDynamic" + ButtonAddedCounter + "' ";
+        WorkString2 += "value='btnEditDynamic_" + ButtonAddedCounter + "' ";
+        WorkString2 += "type='button'";
+        WorkString2 += " />";
+        var WorkStringCell2 = "<td>" + WorkString2 + "</td>";
+
+        var WorkString3 = "<input id='btnDeleteDynamic" + ButtonAddedCounter + "' ";
+        WorkString3 += "value='btnDeleteDynamic_" + ButtonAddedCounter + "' ";
+        WorkString3 += "type='button'";
+        WorkString3 += "class='deleteClass'";
+        WorkString3 += " />";
+        var WorkStringCell3 = "<td>" + WorkString3 + "</td>";
+        
+        var NewRowHTML = "<tr>" + WorkStringCell0 + WorkStringCell1 + 
+                        WorkStringCell2 + WorkStringCell3 + "</tr>";
+        $("#DataTable tbody").append(NewRowHTML);
+
+        ButtonAddedClass.removeClass("None");
+    });
+
+    $(".ButtonsAdded1").on("click", '[id^="btnEditDynamic"]', function(e) {
+        debugger;
+        CurrentEditItem = $(this);
+        CurrentDeleteItem = CurrentEditItem.parent().next().find("input[type='button']");
+        $("#txtEditItem1").val($(this).val());
+        $(".EditItem1").removeClass("None");
+    });
+
+    $(".ButtonsAdded1").on("click", '[id^="btnDeleteDynamic"]', function(e) {
+        debugger;
+        var DeleteResult = confirm("Do you really wish to delete : " + $(this).val())
+        if (DeleteResult) 
+        {
+            EditItemHere = $(this).parent().prev().find("input[type='button']");
+            if ((EditItemHere).val() == $("#txtEditItem1").val())
+            {
+                $("#txtEditItem1").val("");
+                $(".EditItem1").addClass("None");
+            }
+            $(this).closest("tr").remove();
+            if (1 == $("#DataTable tr").length) {
+                ButtonAddedClass.addClass("None");
+                ButtonAddedCounter = 0;
+            }
+        }
+    });
+
+    $("#txtEditItem1").on("input", function() {
+        debugger;
+        CurrentEditItem.val($("#txtEditItem1").val());
+        var EditString = CurrentEditItem.val();
+        var SubString = EditString.substring(EditString.indexOf('_') + 1);
+        var DeleteString = CurrentDeleteItem.val().substring(0, CurrentDeleteItem.val().indexOf('_'));
+        CurrentDeleteItem.val(DeleteString + "_" + SubString);
+        $("#txtEditItem1").width(jQueryCalculateWidthOnControl($("#txtEditItem1")));
+    });
+
+    function jQueryCalculateWidthOnControl(Control_Object) {
+        debugger;
+        ControlWidth = Control_Object.val().length;
+        return (ControlWidth * 9 + 25);
+    }
+
+});
+
+</script>

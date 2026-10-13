@@ -1,0 +1,51 @@
+<h2>På denne side 1 af CSS vil forskellige CSS Egenskaber for en klasse og et &lt;h2&gt; tag blive vist !!!</h2>
+
+<h2>Et "rent" h2 tag vil have bagrundsfarven lightgray</h2>
+
+<h2 class="test">Denne tekst er med blå baggrundsfarve og hvid tekstfarve.</class></h2>
+<h2 class="test">Stylet i CSS som : h2.test 
+    {
+        background-color: blue;
+        color: white;
+    } => læg mærke til INGEN mellemrum mellem h2 og .test !!!</class></h2>
+<h2 class="test">Stylet i LESS CSS som : h2 
+    {
+        &.test
+        {
+            background-color: blue;
+            color: white;
+        }
+    } => læg mærke til & karakteren før .test !!!</h2>
+<h2 class="test">Og nås i HTML med syntaksen: &lt;h2 class="test"&gt;</h2>
+
+<br />
+
+<h2><div class="test">Denne tekst er med grøn baggrundsfarve og hvid tekstfarve.</class></h2>
+<h2><div class="test">Stylet i CSS som : h2 .test 
+    {
+        background-color: green;
+        color: white;
+    }   => læg mærke til mellemrum mellem h2 og .test !!!</class></h2>
+<h2><div class="test">Stylet i LESS CSS som : h2 
+    {
+        .test 
+        {
+          background-color: green;
+          color: white;
+        }
+    }   => læg mærke til INGEN & karakter før .test !!!</class></h2>
+<h2><div class="test">Og nås i HTML med syntaksen: &lt;h2&gt; &lt;div class="test"&gt;</class></h2>
+
+<br />
+<br />
+
+<div class="test"><h2>Dette er skrevet med rød baggrundsfarve</h2></div>
+
+<div Id="BackgroundColorForIdControl"><h2>Dette er skrevet med den specificerede baggrundsfarve for ID fra Stylesheet, som er orange</h2></div>
+
+<br />
+<h2>Se også i filen ShowCSS_Properties.html</h2>
+
+<div class="test h2">Test</div> 
+
+

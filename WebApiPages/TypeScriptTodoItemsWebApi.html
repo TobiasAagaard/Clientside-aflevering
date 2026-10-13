@@ -1,0 +1,80 @@
+<p id="UrlInfo"></p>
+<div class="table-responsive">
+    <table class="table table-striped smallFontsizeInTable table-bordered" id="todo-list">
+        <thead>
+            <tr>
+                <th>Emne</th>
+                <th>URL</th>
+                <th>Forklaring</th>
+            </tr>
+        </thead>
+        <tbody id="table-body-urls">
+        </tbody>
+    </table>
+</div>
+
+<h2><div id="loadingDataSpinner" style="display: none;">Henter data...</div></h2>
+
+<div class="container mt-1">
+    <div id="div-userName" class="text-center mb-1">
+        <label for="user-name" class="form-label">Brugernavn:</label>
+        <input type="text" id="user-name" class="form-control d-inline-block" style="width: 200px;">
+        <input id="btnUserName" type="button" value="Gem Username i Local Storage" />
+    </div>
+    <div id="editForm" class="mb-1 d-none">
+        <h3 class="text-center">Rediger opgave</h3>
+        <form id="editFormElement">
+            <input type="hidden" id="edit-id">
+            <div class="mb-3">
+                <div class="form-check">
+                    <input type="checkbox" id="edit-isComplete" class="form-check-input">
+                    <label class="form-check-label" for="edit-isComplete">Gennemført</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="edit-name" class="form-label">Opgavenavn:</label>
+                <input type="text" id="edit-name" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Gem</button>
+            <button type="button" class="btn btn-secondary" id="cancel-btn">Annuller</button>
+        </form>
+    </div>
+    <div id="addForm" class="mb-1">
+        <h3 class="text-center">Tilføj ny opgave</h3>
+        <form id="addFormElement">
+            <div class="mb-1">
+                <label for="add-name" class="form-label">Opgavenavn:</label>
+                <input type="text" id="add-name" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success">Tilføj</button>
+        </form>
+    </div>
+    <hr>
+    <div class="text-center mb-1">
+        <p>Antal viste opgaver pr. side: 
+            <input type="number" id="pageSize" class="form-control d-inline-block" value="5" min="1" style="width: 80px;">
+        </p>
+    </div>
+    <div id="total-count-container" class="text-center mb-1">
+        <p>I alt opgaver: <span id="total-count">0</span></p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped smallFontsizeInTable table-bordered" id="todo-list">
+            <thead>
+                <tr>
+                    <th>Gennemført</th>
+                    <th>Opgavenavn</th>
+                    <th>Handlinger</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                </tbody>
+        </table>
+    </div>
+    <div class="pagination-container">
+        <nav>
+            <ul class="pagination" id="pagination">
+            </ul>
+        </nav>
+    </div>
+</div>

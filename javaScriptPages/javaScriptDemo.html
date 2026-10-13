@@ -1,0 +1,56 @@
+<h1>javaScript Demo</h1>
+
+<h2>What Can javaScript Do?</h2>
+
+<p id="demo">JavaScript can hide HTML elements.</p>
+
+<p id="demo">JavaScript can hide HTML elements 2.</p>
+
+<button type="button" onclick="document.getElementById('demo').style.display='none'">Skjul tekst</button>
+
+<button type="button" onclick="document.getElementById('demo').style.display='block'">Vis tekst</button>
+
+<br />
+<br />
+
+<p name="demoFunction">JavaScript can hide HTML elements By Name.</p>
+
+<p name="demoFunction">JavaScript can hide HTML elements  By Name 2.</p>
+
+<p name="demoFunction">JavaScript can hide HTML elements  By Name 3.</p>
+
+<button type="button" onclick="ShowHideLines('none')">Skjul tekst</button>
+
+<button type="button" onclick="ShowHideLines('block')">Vis tekst</button>
+
+<br />
+<br />
+
+<div id="TagsInOneBlock">
+    <p name="demoInBlock">JavaScript can hide HTML elements By Div Id.</p>
+
+    <p name="demoInBlock">JavaScript can hide HTML elements By Div Id 2.</p>
+
+    <p name="demoInBlock">JavaScript can hide HTML elements By Div Id 3.</p>
+</div>
+
+<button type="button" onclick="document.getElementById('TagsInOneBlock').style.display='none'">Skjul tekst</button>
+
+<button type="button" onclick="document.getElementById('TagsInOneBlock').style.display='block'">Vis tekst</button>
+
+<script type="text/javaScript">
+// Koden herunder bruges ikke længere. Og det dur heller ikke længere
+// med javaScriptkode lagt ind i et script Tag på en html side.
+document.addEventListener('DOMContentLoaded', function() 
+{
+    function ShowHideLines(ShowHideText)
+    {
+        var DocumentElements = document.getElementsByName("demoFunction");
+
+        for (let Counter = 0; Counter < DocumentElements.length; Counter++)
+        {
+            DocumentElements[Counter].style.display = ShowHideText;
+        }
+    }
+}
+</script>

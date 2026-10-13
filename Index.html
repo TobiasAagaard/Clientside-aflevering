@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Site</title>
+    
+    <!-- <script type="module" src="node_modules/jquery/dist/jquery.js"></script> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- font-awesome.min.css skal være med for at give pil down på submenuer !!! -->
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script> 
+ 
+    <script type="module" src="javaScriptFiles/PageNavigation.js"></script>
+    
+    <!-- <link rel="stylesheet" href="StyleSheetFiles/StyleSheetLess1.css"/> -->
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ClientSide</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li>
+            <a class="nav-link active" href="#" 
+                data-htmlPageUrl="Home.html"
+                data-targetClassName="ContentFrameForHTMLFiles"
+                data-jsModuleUrl="/javaScriptFiles/Home.js"
+                data-callbackFunctionName="initWebSite"
+                data-callbackParams="Hej h2pd070125 !!!"
+                data-load-once="false"
+                data-prefetch="false"
+                data-default="true">
+              Home
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Forklaring
+            </a>
+            <ul class="dropdown-menu">
+             
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlPageUrl="/Forklaring/StatiskSide.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles">
+                  Statisk Side
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlPageUrl="/Forklaring/DynamiskSideCallbackUdenParametreTilCallbackFunktion.html"
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/DynamiskSideCallbackUdenParametreTilCallbackFunktion.js"
+                  data-callbackFunctionName="init_DynamiskSideCallbackUdenParametreTilCallbackFunktion">
+                  Callback uden Parametre
+                </a>
+              </li>
+            
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlPageUrl="/Forklaring/DynamiskSideCallbackMedEnkeltParameterTilCallbackFunktion.html"
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/DynamiskSideCallbackMedEnkeltParameterTilCallbackFunktion.js"
+                  data-callbackFunctionName="init_DynamiskSideCallbackMedEnkeltParameterTilCallbackFunktion"
+                  data-callbackParams="Teksten her er overført som parameter fra Index.html filen ved brug af data-callbackParams">
+                  Callback med én Parameter
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlPageUrl="/Forklaring/DynamiskSideCallbackMedArrayParameterTilCallbackFunktion.html"
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/DynamiskSideCallbackMedArrayParameterTilCallbackFunktion.js"
+                  data-callbackFunctionName="init_DynamiskSideCallbackMedArrayParameterTilCallbackFunktion"
+                  data-callbackParams="[1, 2, 3, 4, 5]">
+                  Callback Array Parameter
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlPageUrl="/Forklaring/DynamiskSideCallbackMedObjektParameterTilCallbackFunktion.html"
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/DynamiskSideCallbackMedObjektParameterTilCallbackFunktion.js"
+                  data-callbackFunctionName="init_DynamiskSideCallbackMedObjektParameterTilCallbackFunktion"
+                  data-callbackParams='{"carId": 1, "carName" : "Honda",  "carPrice": 120000, "carYear": 2018}'>
+                  Callback Objekt Parameter
+                </a>
+              </li>
+            
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlPageUrl="/Forklaring/DynamiskSideCallbackMedArrayAfObjekterParameterTilCallbackFunktion.html"
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/DynamiskSideCallbackMedArrayAfObjekterParameterTilCallbackFunktion.js"
+                  data-callbackFunctionName="init_DynamiskSideCallbackMedArrayAfObjekterParameterTilCallbackFunktion"
+                  data-callbackParams='[{"carId": 1, "carName" : "Honda",  "carPrice": 120000, "carYear": 2018},{"carId": 2, "carName" : "Toyota",  "carPrice": 100000, "carYear": 2020}]'>
+                  Callback Array Objekt Parameter
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlPageUrl="/Forklaring/DynamiskSideCallbackDemo.html"
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/DynamiskSideCallbackDemo.js"
+                  data-callbackFunctionName="init_DynamiskSideCallbackDemo"
+                  data-callbackParams='{"numberOfButtonsToInsertOnStartup": 4, 
+                                        "usejQuery": true,
+                                        "backgroundImage": "/Pictures/Struervej1.jfif"}'>
+                  Callback Demo
+                </a>
+              </li>
+
+              <li><hr class="dropdown-divider"></li>
+
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              javaScript
+            </a>
+            <ul class="dropdown-menu">
+             
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlPageUrl="/javaScriptPages/javaScriptDemo.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles">
+                  javaScriptDemo
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/javaScriptPages/javaScriptDemoEvent.html"
+                  data-targetClassName="ContentFrameForHTMLFiles" 
+                  data-jsModuleUrl="/javaScriptFiles/javaScriptDemoEvent.js"
+                  data-callbackFunctionName="init_javaScriptDemoEvent">
+                  javaScriptDemoEvent
+                </a>
+              </li>
+            
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/javaScriptPages/javaScriptBindingDynamic.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/javaScriptBindingDynamic.js"
+                  data-callbackFunctionName="init_javaScriptBindingDynamic"
+                  data-callbackParams="10">
+                  javaScriptBindingDynamic
+                </a>
+              </li>
+            
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/javaScriptPages/javaScriptClassDemo.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/javaScriptClassDemo.js"
+                  data-callbackFunctionName="init_javaScriptClassDemo">
+                  javaScriptClassDemo
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Car
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/CarPages/javaScriptCar.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/javaScriptCar.js"
+                  data-callbackFunctionName="init_javaScriptCar"
+                  data-callbackParams='[{"carId": 1, "carName" : "Honda",  "carPrice": 120000, "carYear": 2018, "carModel": "Civic"},
+                                        {"carId": 2, "carName" : "Toyota",  "carPrice": 100000, "carYear": 2020}]'>
+                  javaScriptCar
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/CarPages/javaScriptCarInitTable.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/javaScriptCarInitTable.js"
+                  data-callbackFunctionName="init_javaScriptCarInitTable">
+                  javaScriptCar Init Table
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/CarPages/javaScriptCarLocalStorage.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/javaScriptCarLocalStorage.js"
+                  data-callbackFunctionName="init_javaScriptCarLocalStorage">
+                  javaScriptCar-LocalStorage
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/CarPages/javaScriptCarWebApi.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/javaScriptCarWebApi.js"
+                  data-callbackFunctionName="init_javaScriptCarWebAPi">
+                  javaScriptCar-WebApi
+                </a>
+              </li>
+
+              <li><hr class="dropdown-divider"></li>
+
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>    
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              jQuery
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/jQueryPages/jQueryDemo.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/jQueryFiles/jQueryDemo.js"
+                  data-callbackFunctionName="init_jqueryDemo">
+                  jQueryDemo
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/jQueryPages/jQueryBindingDynamic.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/jQueryFiles/jQueryBindingDynamic.js"
+                  data-callbackFunctionName="init_jQueryBindingDynamic"
+                  data-callbackParams="8">
+                  jQueryBindingDynamic
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/jQueryPages/jQueryBindingDynamic1.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/jQueryFiles/jQueryBindingDynamic1.js"
+                  data-callbackFunctionName="init_jQueryBindingDynamic1">
+                  jQueryBindingDynamic1
+                </a>
+              </li>
+             
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              CSS
+            </a>
+
+            <ul class="dropdown-menu">
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlPageUrl="/CSS_Pages/ShowCSS_Properties.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles">
+                  ShowCSS Properties
+                </a>
+              </li>
+
+              <li>
+              <a class="dropdown-item" href="#" 
+                data-htmlPageUrl="/CSS_Pages/ShowCSS_Properties1.html" 
+                data-targetClassName="ContentFrameForHTMLFiles">
+                ShowCSS Properties 1
+              </a>
+              </li>
+
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TypeScript
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/TypeScriptPages/HandleStudents.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/TypeScriptFiles/HandleStudents.ts"
+                  data-callbackFunctionName="init_HandleStudents">
+                  HandleStudents
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Web Api
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/WebApiPages/javaScriptTodoItemsWebApi.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/javaScriptFiles/javaScriptTodoItemsWebApi.js"
+                  data-callbackFunctionName="init_javaScriptTodoItemsWebApi">
+                  TodoItemsWebApi (javaScript)
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/WebApiPages/jQueryTodoItemsWebApi.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/jQueryFiles/jQueryTodoItemsWebApi.js"
+                  data-callbackFunctionName="init_jQueryTodoItemsWebApi">
+                  TodoItemsWebApi (jQuery)
+                </a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="#" 
+                  data-htmlpageUrl="/WebApiPages/TypeScriptTodoItemsWebApi.html" 
+                  data-targetClassName="ContentFrameForHTMLFiles"
+                  data-jsModuleUrl="/TypeScriptFiles/TypeScriptTodoItemsWebApi.ts"
+                  data-callbackFunctionName="init_TypeScriptTodoItemsWebApi">
+                  TodoItemsWebApi (TypeScript)
+                </a>
+              </li>
+           
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="ContentFrameForHTMLFiles MyMargin">
+    <h2>Test it</h2>
+  </div>
+   
+</body>
+    
+</html>
+
+
