@@ -372,27 +372,6 @@ export function init_javaScriptCarWebAPi()
         renderPagination();
     }
 
-    // SignalR-forbindelse, så tabellen også opdateres, når andre klienter ændrer data.
-    // Forbindelsen oprettes kun én gang, selvom siden åbnes flere gange.
-    refreshOnServerChange = getItems;
-
-    if (connection === null) {
-        connection = new signalR.HubConnectionBuilder()
-            .withUrl(MAIN_URL + "/TodoHub")
-            .configureLogging(signalR.LogLevel.Information)
-            .build();
-
-        connection.on("ReceiveMessage", function (user, message) {
-            console.log("SignalR: " + user + " - " + message);
-            refreshOnServerChange();
-        });
-
-        connection.start().then(function () {
-            console.log("SignalR-forbindelse oprettet.");
-        }).catch(function (err) {
-            return console.error(err.toString());
-        });
-    }
 
     let userName = localStorage.getItem('userName');
     if (userName) {
